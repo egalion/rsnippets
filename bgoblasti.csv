@@ -1,0 +1,38 @@
+kod,bgname,latinname
+BG,България,Bulgaria
+BG3,"Северна и Югоизточна България","Severna i Yugoiztochna Bulgaria"
+BG31,Северозападен,Severozapaden
+BG311,Видин,Vidin
+BG312,Монтана,Montana
+BG313,Враца,Lovech
+BG314,Плевен,Vratsa
+BG315,Ловеч,Pleven
+BG32,"Северен централен","Severen tsentralen"
+BG321,"Велико Търново","Veliko Tarnovo"
+BG322,Габрово,Gabrovo
+BG323,Русе,Ruse
+BG324,Разград,Razgrad
+BG325,Силистра,Silistra
+BG33,Североизточен,Severoiztochen
+BG331,Варна,Varna
+BG332,Добрич,Dobrich
+BG333,Шумен,Shumen
+BG334,Търговище,Targovishte
+BG34,Югоизточен,Yugoiztochen
+BG341,Бургас,Burgas
+BG342,Сливен,Sliven
+BG343,Ямбол,Yambol
+BG344,"Стара Загора","Stara Zagora"
+BG4,"Югозападна и Южна централна България","Yugozapadna i Yuzhna tsentralna Bulgaria"
+BG41,Югозападен,Yugozapaden
+BG411,"София (столица)","Sofia (stolitsa)"
+BG412,София,Sofia
+BG413,Благоевград,Blagoevgrad
+BG414,Перник,Pernik
+BG415,Кюстендил,Kyustendil
+BG42,"Южен централен","Yuzhen tsentralen"
+BG421,Пловдив,Plovdiv
+BG422,Хасково,Haskovo
+BG423,Пазарджик,Pazardzhik
+BG424,Смолян,Smolyan
+BG425,Кърджали,Kardzhali

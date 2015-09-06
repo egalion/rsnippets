@@ -21,6 +21,14 @@ qchisq(0.950, 1) # where 1 is the degrees of freedom from
 fligner.test(baskball$Made, baskball$Shoes)
 fligner.test(baskball$Made, baskball$Time)
 
+library(car)
+
+# with one independent variable
+leveneTest(Made ~ Shoes, data = baskball)
+# with two independent variables
+leveneTest(Made ~ Shoes*Time, data = baskball)
+
+
 int <- aov(Made ~ Time*Shoes)
 summary(int)
 noint <- aov(Made ~ Time + Shoes)
@@ -38,5 +46,5 @@ interaction.plot(Time, Shoes, Made)
 qqnorm(lm(Made ~ Time + Shoes + Time:Shoes)$res)
 
 
-
+model.tables(aov(Made ~ Time*Shoes))
 
