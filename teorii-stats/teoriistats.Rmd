@@ -1,0 +1,64 @@
+---
+title: "Резултати от изпита от Икономически теории"
+author: "Александър Косулиев"
+date: "January 31, 2016"
+output:
+  word_document: default
+  pdf_document:
+    latex_engine: xelatex
+---
+
+
+Разпределение на явилите се студенти по групи:
+
+```{r, echo = FALSE}
+rezultati <- read.csv("results.csv")
+
+mgsub <- function(pattern, replacement, x, ...) {
+  result <- x
+  for (i in 1:length(pattern)) {
+    result <- gsub(pattern[i], replacement[i], result, ...)
+  }
+  result
+}
+
+rezultati$group <- mgsub(c("100","101","102","41","59","42","61"), c("инд","инд","инд","Марк","Марк","МИО","Ик"), rezultati$group)
+
+
+rezcomplete <- rezultati[complete.cases(rezultati$exam), ]
+
+table(rezcomplete$group)
+                      
+```
+
+Описателна статистика за всички групи:
+
+```{r, echo=FALSE}
+summary(rezcomplete$exam)
+```
+
+
+Описателна статистика по групи:
+
+```{r, echo=FALSE}
+tapply(rezcomplete$exam, rezcomplete$group, summary)
+
+boxplot(exam ~ group, data = rezcomplete, 
+ylab = "Точки", 
+col = c("yellow", "orange", "lightgreen", "lightblue"))
+
+```
+
+```{r, echo=FALSE}
+
+for (i in 7:12) {
+  j <- 1-pbinom(i, 30, 0.25)
+  cat("При", i, "верни отговора вероятността да са познати случайно е", round((j*100), digits = 1),"%.\n") 
+}
+
+```
+
+Ако приемем за граница 9 верни отговора, броят на студентите, които имат толкова, е `r length(which(rezcomplete$exam == 1.8))`, което означава, че вероятно поне един от тях е отговорил случайно. От `r nrow(rezcomplete)` студенти, `r length(which(rezcomplete$exam >= 1.8))` са взели изпита. Ако приемем за граница 10 верни отговора, броят на студентите, които имат толкова, е `r length(which(rezcomplete$exam == 2))` и е малко вероятно някой от тях да е достигнал до него по случайност. Тогава от `r nrow(rezcomplete)` студенти, `r length(which(rezcomplete$exam >= 2))` са го издържали.
+
+
+
